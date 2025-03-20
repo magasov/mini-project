@@ -1,0 +1,21 @@
+<div class="search">
+    <input type="text" placeholder="Поиск..." (input)="search($event)">
+    <button>поиск</button>
+</div>
+
+
+<div class="products">
+    @for (product of filterProducts; track $index) {
+        <div class="product">
+            <div class="product-image">
+                <img [src]="product.image" alt="{{product.desc}}">
+            </div>
+            <h3>{{ product.description.split(' ')[0] }}</h3>
+            <p class="description">{{product.description}}</p>
+            <p class="price">Цена: {{product.price}} руб.</p>
+           
+            <button (click)="addProductBasket(product)">Добавить в корзину</button>
+        </div>
+    }
+</div>
+

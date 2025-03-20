@@ -1,0 +1,18 @@
+<h1 style="margin-top: 60px; padding-left: 15%; padding-right: 15%;">Корзина</h1>
+<div class="basket">
+    {{getBasket()}}
+
+    <div class="products">
+    @for (product of basket; track $index) {
+        <div class="product">
+            <div class="product-image">
+                <img [src]="product.image" alt="{{product.name}}">
+            </div>
+            <h3>{{ product.desc.split(' ')[0] }}</h3>
+            <p class="description">{{product.desc}}</p>
+            <p class="price">Цена: {{product.price}} руб.</p>
+        </div>
+    }
+    <div ></div>
+</div>
+</div>
